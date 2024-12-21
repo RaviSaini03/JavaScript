@@ -60,4 +60,55 @@ const newArray = [200, 400 ,300]
 function arrayElement(getArrayElement){
     return getArrayElement[2];
 }
-console.log(arrayElement(newArray));
+// console.log(arrayElement(newArray));
+
+// arrow functions
+
+const client = {
+    name: "Rohan",
+    addresh: "jaipur",
+    moneyPending: 8999,
+    reminder: function(){
+        console.log(`Hello ${this.name}, your pending money is $${this.moneyPending}. `);
+        console.log(this);
+    }
+}
+// console.log(client.reminder());
+// client.reminder();
+// client.name = "Rahul"
+// client.reminder();
+// console.log(this);
+// client.reminder(this);
+
+function myName(){
+    const name = "Ravi"
+    console.log(this.name);
+}
+// myName();
+
+const mySurName = function() {
+    const surName = "Saini"
+    console.log(this.surName);
+}
+// mySurName();
+
+const myFullName = () => {
+    const fullName = "Ravi Saini"
+    console.log(this.fullName);
+}
+// myFullName();
+// the use of this will give undeifned in all three cases of functions
+
+const sum = (num1, num2) => {
+    return num1 + num2;
+}
+// console.log(sum(2, 5));
+
+// implicit function
+const sub = (num1, num2) => (num1 - num2);
+// console.log(sub(4, 2));
+
+const obj = () => {name: "Ravi"};
+const obj1 = () => ({name: "Ravi Saini"});// if you want to declare a object in implicit function then you should use "()"
+// console.log(obj());
+// console.log(obj1());
