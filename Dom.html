@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // const parent = document.querySelector(".Dom");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[0].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);    
+    // }
+
+    // // console.log("NODES: ", parent.childNodes);
+    // const h1 = document.createElement('h1');
+    // // console.log(h1); 
+    // h1.className = "heading"
+    // h1.id = Math.round(Math.random() * 10 + 1)
+    // h1.setAttribute("title", "Generated h1");
+    // // h1.innerText = "Ravi Saini"
+    // const addText = document.createTextNode("Ravi Saini");
+    // h1.appendChild(addText);
+
+    // document.body.appendChild(h1);
+
+    function addlanguage(lag){
+        const li = document.createElement('li');
+        li.innerHTML = `${lag}`
+        document.querySelector('.language').appendChild(li);
+    }
+    addlanguage("Java");
+
+    function addlang(lang){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(li);
+    }
+    addlang("python");
+
+    // Edit 
+    const secondLang = document.querySelector('li:nth-child(2)');
+    // secondLang.innerHTML = "Ruby"
+    const newLi = document.createElement("li");
+    newLi.textContent = "Go"
+    secondLang.replaceWith(newLi);
+
+    //edit
+    const firstLang = document.querySelector
+    ("li:first-child");
+    firstLang.outerHTML = '<li>ReactJs</li>'
+
+    //remove
+    const lastLang =document.querySelector('li:last-child');
+    lastLang.remove();
+</script>
+</html>
