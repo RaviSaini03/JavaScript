@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ravi Saini</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    //Another way to generate hex code color
+
+    /*    const randomColor1 = function() {
+            const codeValues = '0123456789ABCDEF'
+            let color = '#'
+            for(i=0; i<6; i++) {
+                color += codeValues[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        console.log(randomColor1()); */
+
+    let timeOutId; 
+
+    // way to generate rgb color
+    const bodyColorChange = function(){
+        
+        function randomColor() {
+            let r = Math.round(Math.random() * 256);
+            let g = Math.round(Math.random() * 256);
+            let b = Math.round(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
+        
+        let getColor = randomColor();
+        const bodyColor = document.querySelector('body');
+        bodyColor.style.backgroundColor = getColor;
+        console.log(`new background color is: ${getColor}`);
+    }
+
+    document.querySelector('#start').addEventListener('click', function() {
+        if(!timeOutId){
+            timeOutId = setInterval(bodyColorChange, 1000);
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearInterval(timeOutId);
+        timeOutId = null;
+    });
+
+</script>
+</html>
